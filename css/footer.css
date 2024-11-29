@@ -1,0 +1,96 @@
+:root {
+  --accent1: #185adb;
+  --accent1RGBA: rgba(24, 90, 219, 0.9);
+  --accent2: #ffc947;
+  --text: #f5f0e8;
+  --textSecondary: #fbe4d8;
+  --base: #0a1931;
+}
+
+footer {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background-color: var(--base);
+  min-height: 40vh;
+}
+
+.footerContent {
+  max-width: 600px;
+}
+
+.footerContent h1 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+.footerContent p {
+  margin-bottom: 2em;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.socialLinks a {
+  padding: 1em;
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.socialLinks a::before {
+  content: attr(data-social);
+  position: absolute;
+  background-color: var(--accent-color);
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  transform: translateY(0px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.socialLinks a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.6em solid var(--accent-color);
+  transform: translateY(0px);
+  transition: all 0.3s ease-in-out;
+}
+
+.socialLinks a:hover::before {
+  opacity: 1;
+  transform: translateY(-4em);
+}
+
+.socialLinks a:hover::after {
+  opacity: 1;
+  transform: translateY(-2.8em);
+}
+
+.socialLinks a svg {
+  height: 2em;
+  fill: var(--text);
+}
+
+.socialLinks a:hover svg {
+  fill: var(--text);
+}
+
+.socialLinks a:hover {
+  background-color: var(--accent-color);
+}

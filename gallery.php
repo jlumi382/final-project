@@ -11,10 +11,15 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="./css/general.css">
+    <link rel="stylesheet" type="text/css" href="./css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="./css/gallery.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer.css">
     <script src="./js/profileMenuHandler.js"></script>
 </head>
 <body>

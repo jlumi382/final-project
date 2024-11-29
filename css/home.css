@@ -1,0 +1,70 @@
+:root {
+  --accent1: #185adb;
+  --accent1RGBA: rgba(24, 90, 219, 0.9);
+  --accent2: #ffc947;
+  --text: #f5f0e8;
+  --textSecondary: #fbe4d8;
+  --base: #0a1931;
+}
+
+section.heroHomeSection {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+}
+
+.heroHomeContent {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 8fr 6fr;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-areas:
+    "heading heading heading"
+    "school school school"
+    "content pic1 pic2";
+}
+
+.heroHomeHeading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: heading;
+  background-color: red;
+}
+
+.heroHomeSlideshow {
+  grid-area: school;
+  width: 100%;
+  height: 100%;
+}
+
+.heroHomeDescription {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: content;
+  background-color: white;
+}
+
+.heroHomePic1 {
+  width: 100%;
+  height: 100%;
+  grid-area: pic1;
+  background-color: blue;
+}
+
+.heroHomeSlideshow img,
+.heroHomePic1 img,
+.heroHomePic2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroHomePic2 {
+  grid-area: pic2;
+  background-color: yellow;
+}

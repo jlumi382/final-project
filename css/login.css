@@ -1,0 +1,167 @@
+:root {
+  --accent1: #185adb;
+  --accent1RGBA: rgba(24, 90, 219, 0.9);
+  --accent2: #ffc947;
+  --text: #f5f0e8;
+  --textSecondary: #fbe4d8;
+  --base: #0a1931;
+}
+
+section.loginSection {
+  background-image: url("./../images/layout/loginBackground.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.loginSection a {
+  text-decoration: none;
+  color: var(--textSecondary);
+}
+
+.loginSection a:hover {
+  text-decoration: underline;
+}
+
+.loginFormContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.loginForm {
+  position: relative;
+  width: 450px;
+  backdrop-filter: blur(25px);
+  border: 2px solid var(--text);
+  border-radius: 15px;
+  padding: 7.5rem 2.5rem 4rem 2.5rem;
+  color: var(--textSecondary);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.loginHeader {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--text);
+  width: 140px;
+  height: 70px;
+  border-radius: 0 0 20px 20px;
+}
+
+.loginHeader span {
+  font-size: 30px;
+  color: var(--base);
+}
+
+.loginHeader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-right-radius: 50%;
+  background: transparent;
+  box-shadow: 15px 0 0 0 var(--text);
+}
+
+.loginHeader::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-left-radius: 50%;
+  background: transparent;
+  box-shadow: -15px 0 0 var(--text);
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.inputField {
+  width: 100%;
+  height: 55px;
+  font-size: 16px;
+  background: transparent;
+  color: var(--textSecondary);
+  padding-inline: 20px 50px;
+  border: 2px solid var(--text);
+  border-radius: 30px;
+  outline: none;
+}
+
+#username {
+  margin-bottom: 10px;
+}
+
+.inputLabel {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.inputField:focus ~ .inputLabel,
+.inputField:valid ~ .inputLabel {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 14px;
+  background-color: var(--text);
+  border-radius: 30px;
+  color: var(--base);
+  padding: 0 10px;
+}
+
+.icon {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-size: 20px;
+}
+
+.rememberForgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.formSubmitButton {
+  width: 100%;
+  height: 50px;
+  background-color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.formSubmitButton:hover {
+  background: var(--textSecondary);
+}
+
+.registerLink {
+  text-align: center;
+}
+
+.registerLink a {
+  font-weight: 500;
+}

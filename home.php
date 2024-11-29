@@ -9,12 +9,16 @@ if (!isset($_SESSION["username"])) {
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/general.css">
+    <link rel="stylesheet" type="text/css" href="./css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="./css/home.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer.css">
     <script src="./js/profileMenuHandler.js"></script>
-    <script src="./js/confirmLogout.js"></script>
 </head>
 <body>
 <header>
@@ -49,7 +53,10 @@ if (!isset($_SESSION["username"])) {
     <section class="heroHomeSection">
         <div class="heroHomeContent">
             <div class="heroHomeHeading">
-                <?php echo "<h2>" . "Hello there " . $_SESSION["username"] . "!" .  "</h2>" ?>
+                <?php echo "<h2>" . "Hello there, " . $_SESSION["username"] . "!" .  "</h2>" ?>
+            </div>
+            <div class="heroHomeSlideshow">
+                <img src="./images/content/sillimanHall.JPG">
             </div>
             <div class="heroHomeDescription">Main Content</div>
             <div class="heroHomePic1">Picture 1</div>

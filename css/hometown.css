@@ -1,0 +1,160 @@
+:root {
+  --accent1: #185adb;
+  --accent1RGBA: rgba(24, 90, 219, 0.9);
+  --accent2: #ffc947;
+  --text: #f5f0e8;
+  --textSecondary: #fbe4d8;
+  --base: #0a1931;
+}
+
+section.heroHometownSection {
+  background-image: linear-gradient(
+      to bottom right,
+      var(--accent1RGBA),
+      var(--accent1RGBA)
+    ),
+    url("./../images/layout/siquijorBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: grid;
+  place-content: center;
+}
+
+section.secondHometownSection {
+  display: grid;
+  place-content: center;
+  background-color: var(--text);
+  color: var(--base);
+}
+
+.secondHometownContent {
+  width: 100%;
+  height: 100%;
+}
+
+.secondHometownContent h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2.6em;
+  text-align: center;
+}
+
+.secondHometownImages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+}
+
+.secondHometownImages .provinceHighlightContainer {
+  height: 600px;
+  width: 400px;
+  cursor: pointer;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.provinceHighlightContainer img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.provinceHighlightContainer .overlayText {
+  position: absolute;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.provinceHighlightContainer:hover img {
+  filter: blur(4px);
+}
+
+.provinceHighlightContainer:hover .overlayText {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.heroHometownContent {
+  max-width: 50em;
+}
+
+.heroHometownHeading {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+}
+
+.heroHometownHeading h1 {
+  color: var(--text);
+  font-weight: 800;
+  font-size: 7rem;
+  margin-top: -0.3em;
+  margin-bottom: 0.15em;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.heroHometownHeading svg {
+  height: 12em;
+  animation: rotate 4s linear infinite;
+}
+
+.heroHometownHeading h2 {
+  color: var(--text);
+  font-weight: 800;
+  font-size: 6rem;
+}
+
+.heroHometownParagraph {
+  margin-bottom: 2em;
+}
+
+.heroHometownParagraph p {
+  font-size: 1.5em;
+}
+
+a.heroHometownButton {
+  font-size: 2rem;
+  display: inline-block;
+  border-radius: 2em;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  background: var(--accent1);
+  border: solid 4px var(--text);
+  box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+
+a.heroHometownButton:hover {
+  background-color: white;
+  color: var(--accent1);
+  border: solid 4px var(--accent1);
+  transform: scale(1.05);
+  font-weight: bold;
+}
