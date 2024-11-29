@@ -50,7 +50,9 @@ section.secondHometownSection {
 
 .secondHometownImages .provinceHighlightContainer {
   height: 600px;
+  /* TODO: better way to calculate height */
   width: 400px;
+  /* TODO: better way to calculate width */
   cursor: pointer;
   border-radius: 1rem;
   display: flex;

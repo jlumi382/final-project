@@ -124,6 +124,7 @@ nav ul li a:hover {
 
 .profileMenuContainer.openProfileMenu {
   max-height: 200px;
+  /* TODO: Better way to set the max height */
   box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -161,7 +162,7 @@ a.profileMenuLink svg {
 }
 
 a.profileMenuLink:hover svg {
-  transform: scale(1.1) translateX(1.2em);
+  transform: scale(1.1) translateX(-0.25em);
 }
 
 a.profileMenuLink p {
