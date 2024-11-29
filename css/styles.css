@@ -378,6 +378,46 @@ section.loginSection {
     font-weight: 500;
 }
 
+section.heroHomeSection {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+.heroHomeContent {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 8fr 6fr;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas:
+        "heading heading heading"
+        "school school school"
+        "content pic1 pic2";
+}
+
+.heroHomeHeading {
+    grid-area: heading;
+    background-color: red;
+}
+
+.heroHomeDescription {
+    grid-area: content;
+    background-color: white;
+}
+
+.heroHomePic1 {
+    grid-area: pic1;
+    background-color: yellow;
+}
+
+.heroHomePic2 {
+    grid-area: pic2;
+    background-color: yellow;
+}
+
 section.heroHometownSection {
     background-image: linear-gradient(to bottom right,
             var(--accent1RGBA),

@@ -66,7 +66,7 @@
     </section>
     <section class="secondHometownSection">
         <div class="secondHometownContent">
-            <h1>City Highlights</h1>
+            <h1>Province Highlights</h1>
             <div class="secondHometownImages">
                 <div class="provinceHighlightContainer">
                     <img src="./images/content/sillimanHall.JPG">
