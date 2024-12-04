@@ -4,8 +4,35 @@ document.addEventListener("DOMContentLoaded", function() {
     );
     const profileMenuContainer = document.querySelector(".profileMenuContainer");
 
-    profilePictureContainer.addEventListener("click", function() {
-        profileMenuContainer.classList.toggle("openProfileMenu");
-        profilePictureContainer.classList.toggle("profileMenuOpened");
+    let isHovering = false;
+
+    profilePictureContainer.addEventListener("mouseover", function() {
+        isHovering = true;
+        profileMenuContainer.classList.add("openProfileMenu");
+        profilePictureContainer.classList.add("profileMenuOpened");
+    });
+
+    profilePictureContainer.addEventListener("mouseout", function() {
+        isHovering = false;
+        setTimeout(function() {
+            if (!isHovering) {
+                profileMenuContainer.classList.remove("openProfileMenu");
+                profilePictureContainer.classList.remove("profileMenuOpened");
+            }
+        }, 100);
+    });
+
+    profileMenuContainer.addEventListener("mouseover", function() {
+        isHovering = true;
+    });
+
+    profileMenuContainer.addEventListener("mouseout", function() {
+        isHovering = false;
+        setTimeout(function() {
+            if (!isHovering) {
+                profileMenuContainer.classList.remove("openProfileMenu");
+                profilePictureContainer.classList.remove("profileMenuOpened");
+            }
+        }, 100);
     });
 });

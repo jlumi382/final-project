@@ -1,162 +1,237 @@
 :root {
-  --accent1: #185adb;
-  --accent1RGBA: rgba(24, 90, 219, 0.9);
-  --accent2: #ffc947;
-  --text: #f5f0e8;
-  --textSecondary: #fbe4d8;
-  --base: #0a1931;
+    --accent1: #185adb;
+    --accent1RGBA: rgba(24, 90, 219, 0.9);
+    --accent2: #ffc947;
+    --text: #f5f0e8;
+    --textSecondary: #fbe4d8;
+    --base: #0a1931;
 }
 
 section.heroHometownSection {
-  background-image: linear-gradient(
-      to bottom right,
-      var(--accent1RGBA),
-      var(--accent1RGBA)
-    ),
-    url("./../images/layout/siquijorBackground.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: grid;
-  place-content: center;
+    background-image: linear-gradient(to bottom right,
+            var(--accent1RGBA),
+            var(--accent1RGBA)),
+        url("./../images/layout/siquijorBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: grid;
+    place-items: center;
 }
 
 section.secondHometownSection {
-  display: grid;
-  place-content: center;
-  background-color: var(--text);
-  color: var(--base);
+    display: grid;
+    place-items: center;
+    background-color: var(--text);
+    color: var(--base);
+    height: 100vh;
 }
 
 .secondHometownContent {
-  width: 100%;
-  height: 100%;
+    padding: 2em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .secondHometownContent h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 2.6em;
-  text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 .secondHometownImages {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4em;
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+    align-items: center;
+    width: 100%;
 }
 
 .secondHometownImages .provinceHighlightContainer {
-  height: 600px;
-  /* TODO: better way to calculate height */
-  width: 400px;
-  /* TODO: better way to calculate width */
-  cursor: pointer;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
+    aspect-ratio: 9 / 16;
+    width: 20%;
+    cursor: pointer;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    position: relative;
 }
 
 .provinceHighlightContainer img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  transition: all 0.3s ease-in-out;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
 }
 
 .provinceHighlightContainer .overlayText {
-  position: absolute;
-  color: white;
-  text-align: center;
-  opacity: 0;
-  transform: scale(1.2);
-  transition: all 0.3s ease-in-out;
+    position: absolute;
+    padding: 3em;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
 }
 
 .provinceHighlightContainer:hover img {
-  filter: blur(4px);
+    filter: blur(4px);
 }
 
 .provinceHighlightContainer:hover .overlayText {
-  opacity: 1;
-  transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
 }
 
 .heroHometownContent {
-  max-width: 50em;
+    max-width: 50em;
 }
 
 .heroHometownHeading {
-  display: flex;
-  align-items: center;
-  gap: 4em;
+    display: flex;
+    align-items: center;
+    gap: 4em;
 }
 
 .heroHometownHeading h1 {
-  color: var(--text);
-  font-weight: 800;
-  font-size: 7rem;
-  margin-top: -0.3em;
-  margin-bottom: 0.15em;
+    color: var(--text);
+    font-weight: 800;
+    font-size: 7rem;
+    margin-top: -0.3em;
+    margin-bottom: 0.15em;
 }
 
 @keyframes rotate {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
 
-  50% {
-    transform: scale(1.2) rotate(180deg);
-  }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
 
-  100% {
-    transform: scale(1) rotate(360deg);
-  }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
 }
 
 .heroHometownHeading svg {
-  height: 12em;
-  animation: rotate 4s linear infinite;
+    height: 12em;
+    animation: rotate 4s linear infinite;
 }
 
 .heroHometownHeading h2 {
-  color: var(--text);
-  font-weight: 800;
-  font-size: 6rem;
+    color: var(--text);
+    font-weight: 800;
+    font-size: 6rem;
 }
 
 .heroHometownParagraph {
-  margin-bottom: 2em;
+    margin-bottom: 2em;
 }
 
 .heroHometownParagraph p {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 a.heroHometownButton {
-  font-size: 2rem;
-  display: inline-block;
-  border-radius: 2em;
-  padding: 0.5em 1.5em;
-  text-decoration: none;
-  color: var(--text);
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  background: var(--accent1);
-  border: solid 4px var(--text);
-  box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.5);
-  user-select: none;
+    font-size: 2rem;
+    display: inline-block;
+    border-radius: 2em;
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+    color: var(--text);
+    position: relative;
+    background: var(--accent1);
+    border: solid 4px var(--text);
+    box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    transition: all 0.3s ease-in-out;
 }
 
 a.heroHometownButton:hover {
-  background-color: white;
-  color: var(--accent1);
-  border: solid 4px var(--accent1);
-  transform: scale(1.05);
-  font-weight: bold;
+    background-color: var(--text);
+    color: var(--accent1);
+    border: solid 4px var(--accent1);
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
+dialog {
+    margin: auto;
+    padding: 4em;
+    border-radius: 0.5em;
+    width: 50vw;
+    height: 50vh;
+    background-color: var(--textSecondary);
+    color: var(--base);
+    box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+dialog[open] {
+    animation: showModal 300ms ease normal;
+}
+
+@keyframes showModal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+dialog hr {
+    margin: 1em 0;
+}
+
+dialog.closeModal {
+    animation: closeModal 300ms ease normal;
+}
+
+@keyframes closeModal {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+dialog hr {
+    margin: 1em 0;
+}
+
+dialog .closeHighlightDialog {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: red;
+    transition: all 0.3s ease-in-out;
+}
+
+dialog .closeHighlightDialog:hover {
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+
+dialog h2 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+dialog p {
+    font-size: 1.3rem;
 }

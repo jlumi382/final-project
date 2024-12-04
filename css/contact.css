@@ -1,0 +1,135 @@
+:root {
+  --accent1: #185adb;
+  --accent1RGBA: rgba(24, 90, 219, 0.9);
+  --accent2: #ffc947;
+  --text: #f5f0e8;
+  --textSecondary: #fbe4d8;
+  --base: #0a1931;
+}
+
+section.contactSection {
+  background-image: linear-gradient(
+      to bottom right,
+      var(--accent1RGBA),
+      var(--accent1RGBA)
+    ),
+    url("./../images/layout/siquijorBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: grid;
+  place-items: center;
+  padding: 4em 1em;
+}
+
+.contactFormContainer {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--text);
+  box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+form {
+  flex: 1 1 60%;
+  padding: 2em;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "name name" "email phone" "message message" "submit submit";
+  gap: 1.5em;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.nameInput {
+  grid-area: name;
+}
+
+.emailInput {
+  grid-area: email;
+}
+
+.phoneInput {
+  grid-area: phone;
+}
+
+.messageInput {
+  grid-area: message;
+}
+
+.submitInput {
+  grid-area: submit;
+}
+
+form label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--base);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8em;
+  border-radius: 0.5em;
+  border: 1px solid var(--textSecondary);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent1);
+  box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.submitInput input {
+  background: var(--base);
+  color: var(--text);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  padding: 0.8em 1.5em;
+  border-radius: 0.5em;
+  transition: background 0.3s ease;
+}
+
+.submitInput input:hover {
+  background-color: var(--accent1);
+}
+
+.rightPanel {
+  flex: 1 1 40%;
+  background: var(--accent1);
+  color: white;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.rightPanel h1 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+.rightPanel p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

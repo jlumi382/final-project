@@ -8,63 +8,189 @@
 }
 
 section.heroHomeSection {
-  height: 100vh;
+  height: 120vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightgrey;
+  background-image: linear-gradient(
+      to bottom right,
+      var(--accent1RGBA),
+      var(--accent1RGBA)
+    ),
+    url("./../images/layout/siquijorBackground.jpg");
+  color: var(--text);
+  padding: 1em 5em;
 }
 
 .heroHomeContent {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr 8fr 6fr;
+  grid-template-rows: 1fr 10fr 5fr;
   grid-template-columns: 2fr 1fr 1fr;
   grid-template-areas:
     "heading heading heading"
     "school school school"
-    "content pic1 pic2";
+    "content profile profile";
+
+  row-gap: 1em;
+  column-gap: 1em;
+  padding: 1em;
 }
 
 .heroHomeHeading {
   display: flex;
   align-items: center;
-  justify-content: center;
   grid-area: heading;
-  background-color: red;
 }
 
-.heroHomeSlideshow {
+.heroHomeHeading h2 {
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.heroSchoolContainer {
   grid-area: school;
+  overflow: hidden;
   width: 100%;
   height: 100%;
+}
+
+.heroHomeSchool {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5em;
+}
+
+.heroHomeSchool img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5em;
 }
 
 .heroHomeDescription {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   grid-area: content;
-  background-color: white;
+  overflow: hidden;
+  padding: 4.5em;
+  border-radius: 0.5em;
+  background-color: var(--text);
+  color: var(--base);
 }
 
-.heroHomePic1 {
+.heroHomeDescription p {
+  font-size: 1.5rem;
+  text-align: justify;
+  margin-bottom: 1em;
+}
+
+.heroHomeDescription button {
+  cursor: pointer;
+  margin-right: auto;
+  font-size: 2rem;
+  border-radius: 2em;
+  border-radius: 2em;
+  padding: 0.5em 1.5em;
+  transition: all 0.3s ease-in-out;
+  background: var(--accent1);
+  border: solid 4px var(--text);
+  box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.5);
+  color: var(--text);
+}
+
+.heroHomeDescription button:hover {
+  background-color: var(--text);
+  color: var(--accent1);
+  border: solid 4px var(--accent1);
+  transform: scale(1.05);
+  font-weight: bold;
+}
+
+.heroHomePics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: profile;
   width: 100%;
   height: 100%;
-  grid-area: pic1;
-  background-color: blue;
+  overflow: hidden;
+  gap: 1em;
 }
 
-.heroHomeSlideshow img,
-.heroHomePic1 img,
-.heroHomePic2 img {
-  width: 100%;
+.heroHomePics img {
+  width: 50%;
   height: 100%;
   object-fit: cover;
+  border-radius: 0.5em;
 }
 
-.heroHomePic2 {
-  grid-area: pic2;
-  background-color: yellow;
+section.secondHomeSection {
+  display: none;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  background-color: var(--text);
+  color: var(--base);
+  transition: all 0.3s ease-in-out;
+}
+
+section.secondHomeSection.secondSectionShowed {
+  display: grid;
+  opacity: 1;
+  height: 100vh;
+}
+
+section.secondHomeSection.secondSectionShowed .secondProfilesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+section.secondHomeSection.secondSectionShowed .secondProfile {
+  border-radius: 0.5em;
+  box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--textSecondary);
+  width: 40%;
+  height: 90%;
+  padding: 2em;
+}
+
+section.secondHomeSection.secondSectionShowed .secondProfileHeading {
+  font-size: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+section.secondHomeSection.secondSectionShowed .secondProfileHeading img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 0.5em;
+}
+
+section.secondHomeSection.secondSectionShowed hr {
+  width: 100%;
+  margin: 1em;
+}
+
+section.secondHomeSection.secondSectionShowed p {
+  margin-bottom: 2em;
+}
+
+section.secondHomeSection.secondSectionShowed ul {
+  margin-left: 2em;
 }

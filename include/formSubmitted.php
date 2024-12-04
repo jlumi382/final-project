@@ -1,10 +1,12 @@
 <?php
-session_start();
+    session_start();
+    if (!isset($_SESSION["username"])) {
+        $current_url = $_SERVER['REQUEST_URI'];
+        $_SESSION['redirect_to'] = $current_url;
 
-if (!isset($_SESSION["username"])) {
-    header("Location: ./index.php");
-    exit();
-}
+        header("Location: ./index.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -13,22 +15,21 @@ if (!isset($_SESSION["username"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="./css/general.css">
-    <link rel="stylesheet" type="text/css" href="./css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="./css/home.css">
-    <link rel="stylesheet" type="text/css" href="./css/footer.css">
+    <title>Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="./../css/general.css">
+    <link rel="stylesheet" type="text/css" href="./../css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="./../css/formSubmitted.css">
+    <link rel="stylesheet" type="text/css" href="./../css/footer.css">
     <script src="./js/profileMenuHandler.js"></script>
-    <script src="./js/contributionButtonHandler.js"></script>
 </head>
 <body>
 <header>
     <nav>
         <ul>
-            <li><a href="./home.php">Home</a></li>
-            <li><a href="./hometown.php">Hometown</a></li>
-            <li><a href="./gallery.php">Gallery</a></li>
-            <li><a href="./contact.php">Contact Us</a></li>
+            <li><a href="./../home.php">Home</a></li>
+            <li><a href="./../hometown.php">Hometown</a></li>
+            <li><a href="./../gallery.php">Gallery</a></li>
+            <li><a href="./../contact.php">Contact Us</a></li>
         </ul>
         <div class=profilePictureContainer>
             <?php echo "<p>" . $_SESSION["username"] . "</p>" ?>
@@ -51,69 +52,13 @@ if (!isset($_SESSION["username"])) {
     </nav>
 </header>
 <main>
-    <section class="heroHomeSection">
-        <div class="heroHomeContent">
-            <div class="heroHomeHeading">
-                <?php echo "<h2>" . "Hello there, " . $_SESSION["username"] . "!" .  "</h2>" ?>
-            </div>
-            <div class="heroSchoolContainer">
-                <div class="heroHomeSchool">
-                    <img src="./images/content/sillimanChurch.jpg" alt="Silliman Church">
-                </div>
-            </div>
-            <div class="heroHomeDescription">
-                <p>We are first year students from the College of Computer Studies at Silliman University. This is our final project for the CCS 1 course. Click the button below to see our contributions to this project.</p>
-                <button id="contributionsButton">Update</button>
-            </div>
-            <div class="heroHomePics">
-                <img src="./images/content/miguel.jpg" alt="Photo of Miguel Luis Jumawan">
-                <img src="./images/content/ralph.jpg" alt="Photo of Ralph Anthony C. Abad">
-            </div>
-        </div>
-    </section>
-    <section class="secondHomeSection">
-        <div class="secondProfilesContainer">
-            <div class="secondProfile">
-                <div class="secondProfileHeading">
-                    <h2>Miguel Luis Jumawan</h2>
-                    <img src="./images/content/miguel.jpg">
-                </div>
-                <hr>
-                <div class="secondProfileDescription">
-                    <p>My specific contributions to this project are the following:</p>
-                    <ul>
-                        <li>Storing login information in the session</li>
-                        <li>Using the session variable to display the username</li>
-                        <li>Ensure that user is logged in before visiting other pages</li>
-                        <li>JavaScript for dialog tag handling</li>
-                        <li>JavaScript for profile menu</li>
-                        <li>JavaScript for contributions section</li>
-                        <li>Animations</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="secondProfile">
-                <div class="secondProfileHeading">
-                    <h2>Ralph Anthony C. Abad</h2>
-                    <img src="./images/content/ralph.jpg">
-                </div>
-                <hr>
-                <div class="secondProfileDescription">
-                    <p>My specific contributions to this project are the following:</p>
-                    <ul>
-                        <li>Base HTML of all pages</li>
-                        <li>Login form HTML</li>
-                        <li>Login form CSS</li>
-                        <li>Layout Planning</li>
-                        <li>Gathering Pictures</li>
-                        <li>Making the descriptions</li>
-                        <li>Color palette</li>
-                        <li>Transitions</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="submittedSection">
+    <div class="submittedMessage">
+        <h1>Thank You!</h1>
+        <p>Your message has been received. We’ll get back to you as soon as possible.</p>
+        <a href="./../contact.php" class="backLink">Go Back</a>
+    </div>
+</section>
 </main>
 <footer>
     <div class="footerContent">
